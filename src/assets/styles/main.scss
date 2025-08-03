@@ -1,0 +1,416 @@
+@import "./src/assets/styles/variables.scss";
+
+// Reset and base styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-family-primary;
+  font-size: $font-size-base;
+  line-height: 1.6;
+  color: $text-dark;
+  background-color: $tertiary-color;
+  min-height: 100vh;
+}
+
+// Global LTR Support - Ensure left-to-right layout
+* {
+  direction: ltr;
+  text-align: left;
+}
+
+html {
+  direction: ltr;
+}
+
+body {
+  direction: ltr;
+  text-align: left;
+}
+
+.container {
+  direction: ltr;
+}
+
+// All sections should be LTR
+section {
+  direction: ltr;
+}
+
+// Headers and text content
+h1, h2, h3, h4, h5, h6 {
+  direction: ltr;
+  text-align: left;
+}
+
+p, span, div {
+  direction: ltr;
+  text-align: left;
+}
+
+// Button LTR adjustments
+.btn {
+  direction: ltr;
+  text-align: center;
+}
+
+// Form elements LTR
+input, textarea, select {
+  direction: ltr;
+  text-align: left;
+}
+
+// List items LTR
+ul, ol, li {
+  direction: ltr;
+  text-align: left;
+}
+
+// Grid LTR adjustments
+.grid, .flex {
+  direction: ltr;
+}
+
+// Navigation LTR
+nav, .nav, .navigation {
+  direction: ltr;
+}
+
+// Content areas
+.content, .main-content, .section-content {
+  direction: ltr;
+  text-align: left;
+}
+
+// RTL Support - When RTL is enabled
+[dir="rtl"] {
+  * {
+    direction: rtl;
+    text-align: right;
+  }
+
+  .container {
+    direction: rtl;
+  }
+
+  // Headers and text content
+  h1, h2, h3, h4, h5, h6 {
+    direction: rtl;
+    text-align: right;
+  }
+
+  p, span, div {
+    direction: rtl;
+    text-align: right;
+  }
+
+  // Form elements RTL
+  input, textarea, select {
+    direction: rtl;
+    text-align: right;
+  }
+
+  // List items RTL
+  ul, ol, li {
+    direction: rtl;
+    text-align: right;
+  }
+
+  // Grid RTL adjustments
+  .grid, .flex {
+    direction: rtl;
+  }
+
+  // Navigation RTL
+  nav, .nav, .navigation {
+    direction: rtl;
+  }
+
+  // Content areas
+  .content, .main-content, .section-content {
+    direction: rtl;
+    text-align: right;
+  }
+
+  // Button adjustments for RTL
+  .btn {
+    direction: rtl;
+  }
+
+  // Specific RTL adjustments for flex layouts
+  .header-content {
+    direction: rtl;
+  }
+
+  .nav-list {
+    direction: rtl;
+  }
+
+  .footer-content {
+    direction: rtl;
+  }
+
+  // Social icons and controls positioning
+  .social-icons {
+    direction: rtl;
+  }
+
+  .footer-controls {
+    direction: rtl;
+  }
+
+  // Responsive text alignment
+  @media (max-width: 768px) {
+    h1, h2, h3, h4, h5, h6,
+    p, span, div,
+    .content, .main-content, .section-content {
+      text-align: center;
+    }
+  }
+}
+
+// Global Styles
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-family-primary;
+  font-size: $font-size-base;
+  line-height: 1.6;
+  color: $text-dark;
+  background-color: $tertiary-color;
+}
+
+// Container
+.container {
+  max-width: $container-max-width;
+  margin: 0 auto;
+  padding: 0 $spacing-md;
+  
+  @media (min-width: $breakpoint-lg) {
+    padding: 0 $spacing-xl;
+  }
+}
+
+// Buttons
+.btn {
+  display: inline-block;
+  padding: $spacing-sm $spacing-lg;
+  border: none;
+  border-radius: $border-radius-md;
+  font-size: $font-size-base;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  transition: all $transition-normal;
+  
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: $shadow-lg;
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+  
+  &.btn-primary {
+    background-color: $primary-color;
+    color: $text-primary;
+    
+    &:hover {
+      background-color: darken($primary-color, 10%);
+    }
+  }
+  
+  &.btn-secondary {
+    background-color: $secondary-color;
+    color: $text-primary;
+    
+    &:hover {
+      background-color: lighten($secondary-color, 10%);
+    }
+  }
+  
+  &.btn-outline {
+    background-color: transparent;
+    border: 2px solid $primary-color;
+    color: $primary-color;
+    
+    &:hover {
+      background-color: $primary-color;
+      color: $text-primary;
+    }
+  }
+}
+
+// Form elements
+.form-group {
+  margin-bottom: $spacing-lg;
+  
+  label {
+    display: block;
+    margin-bottom: $spacing-xs;
+    font-weight: 600;
+    color: $text-dark;
+  }
+  
+  input,
+  textarea {
+    width: 100%;
+    padding: $spacing-sm $spacing-md;
+    border: 2px solid #ddd;
+    border-radius: $border-radius-md;
+    font-size: $font-size-base;
+    transition: border-color $transition-normal;
+    
+    &:focus {
+      outline: none;
+      border-color: $primary-color;
+    }
+    
+    &.error {
+      border-color: $error-color;
+    }
+  }
+  
+  textarea {
+    min-height: 120px;
+    resize: vertical;
+  }
+  
+  .error-message {
+    display: block;
+    margin-top: $spacing-xs;
+    font-size: $font-size-sm;
+    color: $error-color;
+  }
+}
+
+// Utility classes
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.mb-sm { margin-bottom: $spacing-sm; }
+.mb-md { margin-bottom: $spacing-md; }
+.mb-lg { margin-bottom: $spacing-lg; }
+.mb-xl { margin-bottom: $spacing-xl; }
+
+.mt-sm { margin-top: $spacing-sm; }
+.mt-md { margin-top: $spacing-md; }
+.mt-lg { margin-top: $spacing-lg; }
+.mt-xl { margin-top: $spacing-xl; }
+
+.p-sm { padding: $spacing-sm; }
+.p-md { padding: $spacing-md; }
+.p-lg { padding: $spacing-lg; }
+.p-xl { padding: $spacing-xl; }
+
+// Responsive utilities
+.d-none { display: none; }
+.d-block { display: block; }
+.d-flex { display: flex; }
+
+@media (min-width: $breakpoint-sm) {
+  .d-sm-none { display: none; }
+  .d-sm-block { display: block; }
+  .d-sm-flex { display: flex; }
+}
+
+@media (min-width: $breakpoint-md) {
+  .d-md-none { display: none; }
+  .d-md-block { display: block; }
+  .d-md-flex { display: flex; }
+}
+
+@media (min-width: $breakpoint-lg) {
+  .d-lg-none { display: none; }
+  .d-lg-block { display: block; }
+  .d-lg-flex { display: flex; }
+}
+
+// Animations
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.6s ease forwards;
+}
+
+.slide-in-left {
+  animation: slideInLeft 0.6s ease forwards;
+}
+
+.slide-in-right {
+  animation: slideInRight 0.6s ease forwards;
+}
+
+// Footer visibility fix
+footer.footer {
+  display: block !important;
+  position: relative !important;
+  z-index: 1000 !important;
+  width: 100% !important;
+  clear: both !important;
+  margin-top: auto !important;
+}
+
+// Ensure app layout supports footer
+#app {
+  min-height: 100vh !important;
+  display: flex !important;
+  flex-direction: column !important;
+}

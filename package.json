@@ -1,0 +1,22 @@
+{
+  "name": "movieweb",
+  "version": "1.0.0",
+  "description": "Movie website built with Vue.js",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "serve": "vite preview --port 3000"
+  },
+  "dependencies": {
+    "gsap": "^3.13.0",
+    "vue": "^3.3.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.2.0",
+    "sass": "^1.62.0",
+    "vite": "^4.3.0"
+  },
+  "type": "module"
+}
